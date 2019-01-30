@@ -555,6 +555,8 @@ class BaseResource(ExternalResource):
 			current = None
 		if not current:
 			object.__setattr__(self, which, value)
+		elif type(current) == string:
+			object.__setattr__(self, which, value)
 		elif type(current) == list:
 			current.append(value)
 		else:
